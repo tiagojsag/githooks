@@ -10,13 +10,4 @@ check_run() {
 	echo "$changed_files" | grep --quiet "$1" && eval "$2"
 }
 
-warn_env_update() {
-  echo ""
-	echo "========================================================"
-	echo "================= ENV FILE UPDATED ====================="
-	echo "========================================================"
-	echo ""
-	exit 0
-}
-
 check_run "db/migrate" "rake db:migrate"
